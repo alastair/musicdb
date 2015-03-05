@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
       for(TagLib::PropertyMap::ConstIterator i = tags.begin(); i != tags.end(); ++i) {
         for(TagLib::StringList::ConstIterator j = i->second.begin(); j != i->second.end(); ++j) {
-          cout << i->first << gs << *j << rs;
+          cout << i->first << gs << (*j).to8Bit(true) << rs;
         }
       }
       cout.flush();
